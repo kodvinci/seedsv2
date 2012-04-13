@@ -1,19 +1,19 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
-
+#gem 'sqlite3'
+gem 'mysql2', '~>0.3.7'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+#  gem 'sass-rails', "  ~> 3.1.0"
+#  gem 'coffee-rails', "~> 3.1.0"
+#  gem 'uglifier'	(commented out the above 3 lines Leo 4/12)
 end
 
 gem 'jquery-rails'
@@ -36,5 +36,5 @@ end
 group :production do
     #gems specifically for Heroku go here
     gem "pg"
-    gem 'therubyracer-heroku', '0.8.1.pre3'
+  #  gem 'therubyracer'
 end

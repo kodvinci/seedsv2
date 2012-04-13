@@ -40,9 +40,11 @@ module MicroLending
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    config.assets.enabled = false # true (turned to false Leo 4/12)
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.assets.initialize_on_precompile = false #added line Leo 4/12
   end
 end

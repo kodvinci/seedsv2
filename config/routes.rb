@@ -56,6 +56,8 @@ MicroLending::Application.routes.draw do
   
   get "payment/payment"
 
+  root :to => redirect('/transactions')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
