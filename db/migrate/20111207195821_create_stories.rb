@@ -1,6 +1,6 @@
 class CreateStories < ActiveRecord::Migration
   def change
-    drop_table :stories;
+#    drop_table :stories;
     
     create_table :stories do |t|
       t.text :description

@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
   end
 
   create_table "badges", :force => true do |t|
-    t.integer  "bid"
+    t.integer  "BID"
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
   end
 
   create_table "borrowers", :force => true do |t|
-    t.integer  "buid"
+    t.integer  "uid"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "category"
@@ -68,18 +68,8 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
     t.datetime "updated_at"
   end
 
-  create_table "kevins", :force => true do |t|
-    t.integer  "identifier"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "class"
-    t.integer  "exp"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "lenders", :force => true do |t|
-    t.integer  "luid"
+    t.integer  "uid"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "class_type"

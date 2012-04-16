@@ -1,7 +1,7 @@
 class CreateBorrowers < ActiveRecord::Migration
   def change
     create_table :borrowers do |t|
-      t.integer :buid
+      t.integer :uid
       t.string :first_name
       t.string :last_name
       t.string :category

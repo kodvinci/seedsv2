@@ -11,9 +11,9 @@ gem 'mysql2', '~>0.3.7'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-#  gem 'sass-rails', "  ~> 3.1.0"
-#  gem 'coffee-rails', "~> 3.1.0"
-#  gem 'uglifier'	(commented out the above 3 lines Leo 4/12)
+#  gem 'sass-rails' #, "  ~> 3.1.0"
+#  gem 'coffee-rails' #, "~> 3.1.0"
+#  gem 'uglifier'	#(commented out the above 3 lines Leo 4/12)
 end
 
 gem 'jquery-rails'
@@ -26,6 +26,9 @@ gem 'jquery-rails'
 
 # To use debugger
 
+group :development do
+#  gem 'rspec-rails' #, '2.6.1'
+end
 
 group :test do
   # Pretty printed test output
@@ -35,6 +38,9 @@ end
 
 group :production do
     #gems specifically for Heroku go here
-    gem "pg"
+  gem "pg"
   #  gem 'therubyracer'
+#  gem 'rspec-rails' #, '2.6.1'
+#  gem 'webrat' #, '0.7.1'
+  
 end
