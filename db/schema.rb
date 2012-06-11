@@ -16,16 +16,16 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
     t.integer  "bid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "badges", :force => true do |t|
     t.integer  "BID"
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "borrowers", :force => true do |t|
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
     t.string   "category"
     t.text     "description"
     t.integer  "sum"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "pic_url"
   end
 
@@ -45,16 +45,16 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
     t.integer  "decision_id"
     t.integer  "story_id"
     t.string   "note"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "decision_objects", :force => true do |t|
     t.text     "description"
     t.text     "requirements"
     t.integer  "story_object_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "to_story_id"
     t.text     "hints"
   end
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
   create_table "event_logs", :force => true do |t|
     t.integer  "luid"
     t.text     "event"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "lenders", :force => true do |t|
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
     t.string   "last_name"
     t.string   "class_type"
     t.integer  "experience"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "credit"
     t.string   "pic_url"
   end
@@ -84,23 +84,23 @@ ActiveRecord::Schema.define(:version => 20111211233305) do
     t.integer  "sid"
     t.text     "choices"
     t.integer  "mapping"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "story_objects", :force => true do |t|
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "transactions", :force => true do |t|
-    t.integer  "luid"
-    t.integer  "buid"
-    t.decimal  "amount",     :precision => 10, :scale => 0
+    t.integer  "UID"
+    t.integer  "BID"
+    t.decimal  "amount"
     t.datetime "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
