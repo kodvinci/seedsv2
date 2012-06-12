@@ -28,7 +28,8 @@ gem 'devise'
 # To use debugger
 
 group :development do
-#  gem 'rspec-rails' #, '2.6.1'
+ gem 'taps'
+ gem 'rvm'
 end
 
 group :test do
@@ -42,5 +43,5 @@ group :production do
   gem "pg"
   gem 'therubyracer'
   gem 'webrat', '0.7.1'
-  
+  gem 'thin'
 end
