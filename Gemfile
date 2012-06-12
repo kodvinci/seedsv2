@@ -6,17 +6,18 @@ gem 'rails'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-#gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-#  gem 'sass-rails' #, "  ~> 3.1.0"
-#  gem 'coffee-rails' #, "~> 3.1.0"
-#  gem 'uglifier'	#(commented out the above 3 lines Leo 4/12)
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
+
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -39,8 +40,7 @@ end
 group :production do
     #gems specifically for Heroku go here
   gem "pg"
-  #  gem 'therubyracer'
-#  gem 'rspec-rails' #, '2.6.1'
-#  gem 'webrat' #, '0.7.1'
+  gem 'therubyracer'
+  gem 'webrat', '0.7.1'
   
 end

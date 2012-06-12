@@ -14,10 +14,10 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.uid %></td>
+    <td><%= user.UID %></td>
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
-    <td><%= user.class %></td>
+    <td><%= user.class_type %></td>
     <td><%= user.exp %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>

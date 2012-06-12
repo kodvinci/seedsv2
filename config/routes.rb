@@ -1,5 +1,11 @@
 MicroLending::Application.routes.draw do
-  
+
+  devise_for :users 
+  resources :users #, :has_one => :lender
+   
+  root :to => "home#index"
+  resources :home 
+ 
   match "/event_logs/getEventsById", :controller => "event_logs", :action => "getEventsById";
   resources :event_logs
 
@@ -54,9 +60,9 @@ MicroLending::Application.routes.draw do
 
   resources :badge_lists
   
-  get "payment/payment"
+  #get "payment/payment"
+   
 
-#  root :to => redirect('seedsd ')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -107,7 +113,7 @@ MicroLending::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-#   root :to => 'index.html'
+  # root :to => 'index.html'
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,40 @@
+<h2>Sign up</h2>
+
+<% resource.build_lender %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :first_name %><br />
+  <%= f.text_field :first_name %></div>
+
+  <div><%= f.label :last_name %><br />
+  <%= f.text_field :last_name %></div>
+
+  <div><%= f.label :UID_A_unique_7_digit_number %><br />
+  <%= f.text_field :UID %></div>
+  
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+<p>Please re-enter the information again</p>
+  <%= f.fields_for :lender do |lender_form| %>
+ 	 <div><%= lender_form.label :first_name %><br />
+ 	 <%= lender_form.text_field :first_name %></div>
+
+	  <div><%= lender_form.label :last_name %><br />
+	  <%= lender_form.text_field :last_name %></div>
+
+	  <div><%= lender_form.label :UID %><br />
+	  <%= lender_form.text_field :UID %></div>
+ 
+ <% end %>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

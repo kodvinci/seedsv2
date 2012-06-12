@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MicroLending</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>Seeds</title>
+<%= stylesheet_link_tag "application", :media => "all" %> 
+<%= javascript_include_tag "application" %>
+ <%= csrf_meta_tags %> 
 </head>
+
 <body>
+	<div id="container" style="background-color:#FFFFCC;width:1000px;height:1200px;margin: 0 auto;">
+		<div id="loginitems" style="background-color:PaleGreen;height:1200px;width:150px;float:right;">
+			<h1 style="text-align:center;"><b>Profile</b></h1>
+			<ul class="hmenu">
+				<%= render 'devise/menu/registration_items' %>
+				<%= render 'devise/menu/login_items' %>
+				<p style="color: green"><%= notice %></p>
+	        		<p style="color: red"><%= alert %></p>
+			</ul>
+		</div>
 
-<%= yield %>
+		<div id="sitenavigation" style="background-color:PaleGreen;height:1200px;width:150px;float:left;">
+			<h2 style="text-align:center;"><b>Navigation</b></h2>
+			<ul class="hnavigation">
+				<%= render 'devise/menu/navigation' %>
+			</ul>
+		</div>
 
+		<%= yield %>
+	</div>
 </body>
 </html>
