@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612080013) do
+ActiveRecord::Schema.define(:version => 20120613131601) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20120612080013) do
     t.decimal  "credit"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "luid"
   end
 
   create_table "story_choices", :force => true do |t|

@@ -8,7 +8,6 @@
     <th>Class type</th>
     <th>Experience</th>
     <th>Credit</th>
-    <th>Image url</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,9 +19,8 @@
     <td><%= lender.first_name %></td>
     <td><%= lender.last_name %></td>
     <td><%= lender.class_type %></td>
-    <td><%= lender.experience %></td>
+    <td><%= lender.exp %></td>
     <td><%= lender.credit %></td>
-    <td><%= lender.pic_url %></td>
     <td><%= link_to 'Show', lender %></td>
     <td><%= link_to 'Edit', edit_lender_path(lender) %></td>
     <td><%= link_to 'Destroy', lender, confirm: 'Are you sure?', method: :delete %></td>
