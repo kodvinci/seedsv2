@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615100832) do
+ActiveRecord::Schema.define(:version => 20120615125901) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
