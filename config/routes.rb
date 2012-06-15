@@ -59,6 +59,8 @@ MicroLending::Application.routes.draw do
   resources :badges
 
   resources :badge_lists
+    
+  resources :stories
   
   #get "payment/payment"
    
