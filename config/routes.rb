@@ -44,7 +44,7 @@ MicroLending::Application.routes.draw do
   #get transactions by ID
   match '/transactions/byUid', :controller =>'transactions', :action => 'byUid';
 
-  match '/stories/byId', :controller =>'stories', :action => 'getStoryById'; #'byUid';
+  match '/stories/byId', :controller =>'stories', :action => 'byUid';
   match '/lenders/getBorrowersByUid', :controller =>'lenders', :action => 'getBorrowersByUid';
   
   match '/borrowers/byBuid', :controller =>'borrowers', :action => 'byBuid';
