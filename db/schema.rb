@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615135029) do
+ActiveRecord::Schema.define(:version => 20120618074906) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(:version => 20120615135029) do
     t.string   "pic_url"
   end
 
+  create_table "create_friends", :force => true do |t|
+    t.integer  "UID"
+    t.integer  "FUID"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "decision_logs", :force => true do |t|
     t.integer  "luid"
     t.integer  "decision_id"
@@ -60,6 +67,24 @@ ActiveRecord::Schema.define(:version => 20120615135029) do
   end
 
   add_index "decision_objects", ["story_object_id"], :name => "index_decision_objects_on_story_object_id"
+
+  create_table "decision_tests", :force => true do |t|
+    t.text     "description"
+    t.integer  "story_test_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "decision_tests", ["story_test_id"], :name => "index_decision_tests_on_story_test_id"
+
+  create_table "decisions", :force => true do |t|
+    t.integer  "decision_id"
+    t.text     "description"
+    t.text     "conditions"
+    t.integer  "decision_destination"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "event_logs", :force => true do |t|
     t.integer  "luid"
@@ -94,6 +119,12 @@ ActiveRecord::Schema.define(:version => 20120615135029) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "story_tests", :force => true do |t|
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "transactions", :force => true do |t|
     t.integer  "UID"
     t.integer  "BID"
@@ -101,6 +132,14 @@ ActiveRecord::Schema.define(:version => 20120615135029) do
     t.datetime "date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_decisions", :force => true do |t|
+    t.integer  "luid"
+    t.integer  "story_id"
+    t.integer  "decision_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

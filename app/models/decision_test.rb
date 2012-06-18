@@ -1,4 +1,3 @@
 class DecisionTest < ActiveRecord::Base
-  belongs_to :story_test
-  
+  # attr_accessible :title, :body
 end
