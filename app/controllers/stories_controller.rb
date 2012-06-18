@@ -83,8 +83,8 @@ class StoriesController < ApplicationController
   
     def getStoryById
     @story = Story.find(:first, :conditions => ["story_id = ?", params[:story_id]]);
-    @story[:decision1]= Decision.find(:first, :conditions => ["decision_id=?", @story[:decision_id_1]]);
-    @story[:decision2]= Decision.find(:first, :conditions => ["decision_id=?", @story[:decision_id_2]]);
+        #   @story[:decision1]= Decision.find(:first, :conditions => ["decision_id=?", @story[:decision_id_1]]);
+        #   @story[:decision2]= Decision.find(:first, :conditions => ["decision_id=?", @story[:decision_id_2]]);
     
     respond_to do |format|
       format.html # new.html.erb
