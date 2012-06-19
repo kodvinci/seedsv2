@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619073639) do
+ActiveRecord::Schema.define(:version => 20120619170600) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -127,8 +127,8 @@ ActiveRecord::Schema.define(:version => 20120619073639) do
   end
 
   create_table "transactions", :force => true do |t|
-    t.integer  "UID"
-    t.integer  "BID"
+    t.integer  "luid"
+    t.integer  "buid"
     t.decimal  "amount"
     t.datetime "date"
     t.datetime "created_at", :null => false
@@ -146,7 +146,7 @@ ActiveRecord::Schema.define(:version => 20120619073639) do
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "UID"
+    t.string   "uid"
     t.string   "class_type"
     t.string   "exp"
     t.string   "email",                  :default => "", :null => false
