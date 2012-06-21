@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :buid %><br />
-    <%= f.number_field :uid %>	<! --changed buid to uid-->
+    <%= f.number_field :buid %>	<! --changed buid to uid-->
   </div>
   <div class="field">
     <%= f.label :first_name %><br />
@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.select :category, ['Crop Farming', 'Trading', 'Communication', 'Transport', 'Livestock Farming', 'Fishing', 'Business Owner'] %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -34,10 +34,6 @@
   <div class="field">
     <%= f.label :sum %><br />
     <%= f.number_field :sum %>
-  </div>
-  <div class="field">
-    <%= f.label :pic_url %><br />
-    <%= f.text_field :pic_url %>
   </div>
   <div class="actions">
     <%= f.submit %>
