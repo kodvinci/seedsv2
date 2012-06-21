@@ -80,4 +80,14 @@ class BadgesController < ApplicationController
       format.json { head :ok }
     end
   end
+    
+  def byBid
+    @badge = Badge.find(params[:bid])
+        
+    respond_to do |format|
+        format.html 
+        format.json { render json: @badge }
+    end
+  end
+
 end
