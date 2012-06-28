@@ -210,9 +210,9 @@ Devise.setup do |config|
   # change the failure app, you can configure them inside the config.warden block.
     #NEW ADDITION
     #   warden.custom_failure!
-   config.warden do |manager|
-     manager.custom_failure!
+    #  config.warden do |manager|
+    #   manager.custom_failure!
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
-   end
+    # end
 end
