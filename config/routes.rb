@@ -1,5 +1,7 @@
 MicroLending::Application.routes.draw do
 
+    devise_for :users 
+    
     namespace :api do
           devise_for :users
           resources :recipes, :only=>[:index, :show]
@@ -8,7 +10,6 @@ MicroLending::Application.routes.draw do
     #Login users using email and password
   match 'users/login', :controller => "api/sessions", :action => "create";
     
-  devise_for :users 
   resources :users, :has_one => :lender
    
   root :to => "home#index"
