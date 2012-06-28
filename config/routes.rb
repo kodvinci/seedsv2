@@ -8,7 +8,9 @@ MicroLending::Application.routes.draw do
     end
    
     #Login users using email and password
-  match 'users/login', :controller => "devise/sessions", :action => "new";
+    devise_scope :users do
+        match 'users/login', :controller => "devise/sessions", :action => "new";
+   end
     
   resources :users, :has_one => :lender
    
