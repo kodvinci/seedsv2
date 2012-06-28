@@ -6,7 +6,7 @@ MicroLending::Application.routes.draw do
     end
    
     #Login users using email and password
-  match 'users/login', :controller => "api/sessions/sessions", :action => "create";
+  match 'users/login', :controller => "api/sessions", :action => "create";
     
   devise_for :users 
   resources :users, :has_one => :lender
