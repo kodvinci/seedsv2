@@ -11,7 +11,8 @@ MicroLending::Application.routes.draw do
     devise_scope :user do
         match 'users/login', :controller => "devise/sessions", :action => "new";
    end
-    
+   
+  match '/users/byEmail', :controller =>"users", :action => "byEmail";
   resources :users, :has_one => :lender
    
   root :to => "home#index"

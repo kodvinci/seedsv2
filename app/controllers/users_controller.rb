@@ -27,5 +27,13 @@ class UsersController < ApplicationController
     end
   end
     
+  def byEmail
+      @user = User.find(params[:email])
+      
+      respond_to do |format|
+          format.html 
+          format.json { render json: @user }
+      end 
+  end
   
 end
