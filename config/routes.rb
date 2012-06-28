@@ -1,7 +1,12 @@
 MicroLending::Application.routes.draw do
 
+    namespace :api do
+          devise_for :users
+          resources :recipes, :only=>[:index, :show]
+    end
+    
   devise_for :users 
-  resources :users #, :has_one => :lender
+  resources :users, :has_one => :lender
    
   root :to => "home#index"
   resources :home 
