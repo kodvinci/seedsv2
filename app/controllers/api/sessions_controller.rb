@@ -226,3 +226,4 @@ def is_navigational_format?
 end
 
 end
+end
