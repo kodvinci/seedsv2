@@ -1,4 +1,4 @@
-class Api::RecipesController < Api::BaseApiController
+class Api::RecipesController < Api::BaseController
   before_filter :authenticate_user!
 
   respond_to :json
