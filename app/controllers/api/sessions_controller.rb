@@ -33,6 +33,7 @@ class Api::SessionsController < Api::BaseController
         warden.custom_failure!
         render :json=> {:success=>false, :message=>"Error with your login or password"}, :status=>401
     end
+    end
     
     def require_no_authentication
         assert_is_devise_resource!
