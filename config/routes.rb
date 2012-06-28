@@ -28,7 +28,10 @@ MicroLending::Application.routes.draw do
   resources :story_tests do
     resources :decision_tests
   end
-
+    
+  #Login users using email and password
+  match 'users/login', :controller => "api/sessions/sessions", :action => "create";
+  
   match "/user_decisions/recordDecision", :controller => "user_decisions", :action => "recordDecision";
 
   match '/stories/getStoryById', :controller => "stories", :action =>"getStoryById";
