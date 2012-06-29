@@ -10,8 +10,8 @@
   <div><%= f.label :last_name %><br />
   <%= f.text_field :last_name %></div>
 
-  <div><%= f.label :unique_number_id %><br />
-  <%= f.text_field :uid %></div>
+  <div><%= f.label :unique_number %><br />
+  <%= f.number_field :uid %></div>
   
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
@@ -29,8 +29,8 @@
 	  <div><%= lender_form.label :last_name %><br />
 	  <%= lender_form.text_field :last_name %></div>
 
-	  <div><%= lender_form.label :UID %><br />
-	  <%= lender_form.text_field :luid %></div>
+	  <div><%= lender_form.label :unique_number %><br />
+	  <%= lender_form.number_field :luid %></div>
 
          <div><%= lender_form.label :gender %><br />
 	  <%= lender_form.select :gender, ['Female', 'Male'] %></div>
