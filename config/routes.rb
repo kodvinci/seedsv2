@@ -3,13 +3,15 @@ MicroLending::Application.routes.draw do
     devise_for :users 
     
     namespace :api do
-          devise_for :users
-          resources :recipes, :only=>[:index, :show]
+        namespace :v1 do
+            #devise_for :users
+            resources :tokens, :only=>[:create, :destroy]
+        end
     end
    
     #Login users using email and password
     devise_scope :user do
-        match 'users/login', :controller => "devise/sessions", :action => "new";
+        match 'users/login', :controller => "api/v1/tokens", :action => "create";
    end
    
   match '/users/byEmail', :controller =>"users", :action => "byEmail";
