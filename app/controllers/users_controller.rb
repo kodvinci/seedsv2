@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
  
   def byAuthToken
-      @user = User.find(params[:authentication_token])
+      @user = User.find(:first, :conditions => ["authentication_token = ?", params[:authentication_token]])
       
       respond_to do |format|
           format.html
