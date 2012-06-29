@@ -3,7 +3,7 @@ class Devise::SessionsController < DeviseController
     prepend_before_filter :allow_params_authentication!, :only => :create
     prepend_before_filter { request.env["devise.skip_timeout"] = true }
     
-    respond_to :json #addition
+    #  respond_to :json #addition
     
     # GET /resource/sign_in
     def new

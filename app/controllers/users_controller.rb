@@ -35,5 +35,14 @@ class UsersController < ApplicationController
           format.json { render json: @user }
       end 
   end
+ 
+  def byAuthToken
+      @user = User.find(params[:authentication_token])
+      
+      respond_to do |format|
+          format.html
+          format.json { render json: @user }
+      end
+  end
   
 end

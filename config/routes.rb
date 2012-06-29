@@ -10,8 +10,10 @@ MicroLending::Application.routes.draw do
     end
    
     #Login users using email and password
+    #Get user information using authentication token
     devise_scope :user do
         match 'users/login', :controller => "api/v1/tokens", :action => "create";
+        match 'users/byAuthToken', :controller => "users", :action => "byAuthToken";
    end
    
   match '/users/byEmail', :controller =>"users", :action => "byEmail";
