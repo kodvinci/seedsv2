@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120629141812) do
+ActiveRecord::Schema.define(:version => 20120629145113) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -90,7 +90,6 @@ ActiveRecord::Schema.define(:version => 20120629141812) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "class_type"
-    t.integer  "exp",        :default => 1
     t.integer  "user_id"
     t.decimal  "credit",     :default => 0.0
     t.datetime "created_at",                  :null => false
@@ -141,7 +140,6 @@ ActiveRecord::Schema.define(:version => 20120629141812) do
     t.string   "last_name"
     t.integer  "uid",                    :limit => 255
     t.string   "class_type"
-    t.integer  "exp",                    :limit => 255, :default => 1
     t.string   "email",                                 :default => "", :null => false
     t.string   "encrypted_password",                    :default => "", :null => false
     t.string   "password"
