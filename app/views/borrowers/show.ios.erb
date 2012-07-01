@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Buid:</b>
+  <%= @borrower.buid %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @borrower.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @borrower.last_name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @borrower.category %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @borrower.description %>
+</p>
+
+<p>
+  <b>Sum:</b>
+  <%= @borrower.sum %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @borrower.pic_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_borrower_path(@borrower) %> |
+<%= link_to 'Back', borrowers_path %>
