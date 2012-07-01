@@ -1,3 +1,3 @@
 ActionController::Responder.class_eval do
-    alias :to_iphone :to_html
+    alias :to_ios :to_html
 end
