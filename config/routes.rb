@@ -14,6 +14,7 @@ MicroLending::Application.routes.draw do
     devise_scope :user do
         match 'users/login', :controller => "api/v1/tokens", :action => "create";
         match 'users/byAuthToken', :controller => "users", :action => "byAuthToken";
+        match 'users/logout', :controller => "api/v1/tokens", :action => "destroy";
    end
    
   match '/users/byEmail', :controller =>"users", :action => "byEmail";
