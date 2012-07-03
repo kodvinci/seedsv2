@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120629145505) do
+ActiveRecord::Schema.define(:version => 20120703082708) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -89,11 +89,11 @@ ActiveRecord::Schema.define(:version => 20120629145505) do
   create_table "lenders", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "class_type"
+    t.string   "class_type", :default => "Noobie"
     t.integer  "user_id"
     t.decimal  "credit",     :default => 0.0
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "luid"
     t.string   "gender"
     t.decimal  "exp",        :default => 1.0
@@ -140,9 +140,9 @@ ActiveRecord::Schema.define(:version => 20120629145505) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "uid",                    :limit => 255
-    t.string   "class_type"
-    t.string   "email",                                 :default => "",  :null => false
-    t.string   "encrypted_password",                    :default => "",  :null => false
+    t.string   "class_type",                            :default => "Noobie"
+    t.string   "email",                                 :default => "",       :null => false
+    t.string   "encrypted_password",                    :default => "",       :null => false
     t.string   "password"
     t.string   "password_confirmation"
     t.string   "reset_password_token"
@@ -154,8 +154,8 @@ ActiveRecord::Schema.define(:version => 20120629145505) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "authentication_token"
-    t.datetime "created_at",                                             :null => false
-    t.datetime "updated_at",                                             :null => false
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
     t.decimal  "exp",                                   :default => 1.0
   end
 
