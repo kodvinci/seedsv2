@@ -1,0 +1,21 @@
+<h1>Listing paypal transactions</h1>
+
+<table>
+  <tr>
+    <th>Uid</th>
+    <th>PayKey</th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @paypaltransactions.each do |paypaltransaction| %>
+  <tr>
+    <td><%= paypaltransaction.uid %></td>
+    <td><%= paypaltransaction.payKey %></td>
+    <td><%= paypaltransaction.amount %></td>
+    <td><%= link_to 'Show', paypaltransaction %></td>
+  </tr>
+<% end %>
+</table>

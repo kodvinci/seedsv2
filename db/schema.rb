@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703082708) do
+ActiveRecord::Schema.define(:version => 20120704130055) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -97,6 +97,14 @@ ActiveRecord::Schema.define(:version => 20120703082708) do
     t.integer  "luid"
     t.string   "gender"
     t.decimal  "exp",        :default => 1.0
+  end
+
+  create_table "paypaltransactions", :force => true do |t|
+    t.integer  "uid",        :null => false
+    t.string   "payKey",     :null => false
+    t.decimal  "amount",     :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "story_choices", :force => true do |t|

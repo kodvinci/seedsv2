@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lender Uid:</b>
+  <%= @paypaltransaction.uid %>
+</p>
+
+<p>
+  <b>payKey:</b>
+  <%= @paypaltransaction.payKey %>
+</p>
+
+<p>
+  <b>Amount</b>
+  <%= @paypaltransaction.amount %>
+</p>
+
+<p>
+  <b>Date & Time</b>
+  <%= @paypaltransaction.created_at %>
+</p>
+
+<%= link_to 'Back', paypaltransactions_path %>
