@@ -41,7 +41,7 @@ MicroLending::Application.routes.draw do
     resources :decision_tests
   end
     
-  match '/paypaltransactions/record', :controller =>'paypaltransactions', :action => 'record';
+  match '/paypaltransactions/record', :controller =>"paypaltransactions", :action => "record";
   
   match "/user_decisions/recordDecision", :controller => "user_decisions", :action => "recordDecision";
 
