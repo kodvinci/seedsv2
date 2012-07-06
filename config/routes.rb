@@ -67,8 +67,10 @@ MicroLending::Application.routes.draw do
   match '/borrowers/byBuid', :controller =>'borrowers', :action => 'byBuid';
   match '/badges/byBid', :controller =>'badges', :action => 'byBid';
 
-    match '/paypaltransactions/byUid', :controller =>'paypaltransactions', :action => 'byUid';
-    match '/paypaltransactions/bypayKey', :controller =>'paypaltransactions', :action => 'bypayKey';
+  match '/paypaltransactions/byUid', :controller =>'paypaltransactions', :action => 'byUid';
+  match '/paypaltransactions/bypayKey', :controller =>'paypaltransactions', :action => 'bypayKey';
+  match '/paypaltransactions/record', :controller =>'paypaltransactions', :action => 'create';
+
 
   
   resources :lenders
