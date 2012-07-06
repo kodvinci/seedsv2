@@ -16,6 +16,11 @@
     <td><%= paypaltransaction.payKey %></td>
     <td><%= paypaltransaction.amount %></td>
     <td><%= link_to 'Show', paypaltransaction %></td>
+    <td><%= link_to 'Show', paypaltransaction %></td>
+    <td><%= link_to 'Edit', edit_paypaltransaction_path(paypaltransaction) %></td>
+    <td><%= link_to 'Destroy', paypaltransaction, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
+
+<%= link_to 'New Badge', new_paypaltransaction_path %>

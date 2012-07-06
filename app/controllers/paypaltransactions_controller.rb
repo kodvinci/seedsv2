@@ -33,9 +33,9 @@ class PaypaltransactionsController < ApplicationController
     end
     
     # GET /paypaltransactions/1/edit
-    #    def edit
-    #        @paypaltransaction = Paypaltransaction.find(params[:id])
-    #    end
+        def edit
+            @paypaltransaction = Paypaltransaction.find(params[:id])
+        end
     
     # POST /paypaltransactions
     # POST /paypaltransactions.json
@@ -55,31 +55,31 @@ class PaypaltransactionsController < ApplicationController
     
     # PUT /transactions/1
     # PUT /transactions/1.json
-    #    def update
-    #        @paypaltransaction = Paypaltransaction.find(params[:id])
+        def update
+            @paypaltransaction = Paypaltransaction.find(params[:id])
         
-    #        respond_to do |format|
-    #            if @paypaltransaction.update_attributes(params[:paypaltransaction])
-    #               format.html { redirect_to @paypaltransaction, notice: 'Paypal transaction was successfully updated.' }
-    #              format.json { head :ok }
-    #             else
-    #             format.html { render action: "edit" }
-    #            format.json { render json: @paypaltransaction.errors, status: :unprocessable_entity }
-    #        end
-    #    end
-    # end
+            respond_to do |format|
+                if @paypaltransaction.update_attributes(params[:paypaltransaction])
+                   format.html { redirect_to @paypaltransaction, notice: 'Paypal transaction was successfully updated.' }
+                   format.json { head :ok }
+                 else
+                 format.html { render action: "edit" }
+                format.json { render json: @paypaltransaction.errors, status: :unprocessable_entity }
+            end
+        end
+     end
     
-    # DELETE /paypaltransactions/1
-    # DELETE /paypaltransactions/1.json
-    #   def destroy
-    #       @paypaltransaction = Paypaltransaction.find(params[:id])
-    #       @paypaltransaction.destroy
+     DELETE /paypaltransactions/1
+     DELETE /paypaltransactions/1.json
+       def destroy
+           @paypaltransaction = Paypaltransaction.find(params[:id])
+           @paypaltransaction.destroy
         
-    #       respond_to do |format|
-    #          format.html { redirect_to paypaltransactions_url }
-    #          format.json { head :ok }
-    #     end
-    # end
+           respond_to do |format|
+              format.html { redirect_to paypaltransactions_url }
+              format.json { head :ok }
+         end
+     end
     
     #allow retrieval of all paypal transactions made by a lender
     def byUid
