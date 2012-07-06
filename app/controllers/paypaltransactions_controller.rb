@@ -69,8 +69,8 @@ class PaypaltransactionsController < ApplicationController
         end
      end
     
-     DELETE /paypaltransactions/1
-     DELETE /paypaltransactions/1.json
+    #    DELETE /paypaltransactions/1
+    #    DELETE /paypaltransactions/1.json
        def destroy
            @paypaltransaction = Paypaltransaction.find(params[:id])
            @paypaltransaction.destroy
