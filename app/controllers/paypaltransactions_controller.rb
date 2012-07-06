@@ -97,4 +97,20 @@ class PaypaltransactionsController < ApplicationController
             format.json { render json: @paypaltransaction }
         end
     end
+    
+    def record
+        @paypaltransaction = Paypaltransaction.new(params[:paypaltransaction])
+        
+        respond_to do |format|
+            if @paypaltransaction.save
+                format.html # { redirect_to @paypaltransaction, notice: 'Paypal transaction was successfully created.' }
+                format.json { render json: @paypaltransaction } # , status: :created, location: @paypaltransaction }
+            else
+                format.html { render action: "new" }
+                format.json { render json: @paypaltransaction.errors, status: :unprocessable_entity }
+            end
+        end
+    end
+
+    
 end
