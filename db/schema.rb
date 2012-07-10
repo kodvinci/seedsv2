@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120704130055) do
+ActiveRecord::Schema.define(:version => 20120710170641) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20120704130055) do
     t.datetime "created_at",                                                  :null => false
     t.datetime "updated_at",                                                  :null => false
     t.decimal  "exp",                                   :default => 1.0
+    t.boolean  "admin",                                 :default => false
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
