@@ -1,7 +1,6 @@
 <h1>Listing users</h1>
 
-<% if user_signed_in? %>
-<% current_user.update_attribute :admin, true %>
+<% if current_user.try(:admin?) %>
 
 <table>
   <tr>
@@ -33,7 +32,7 @@
 
 <% else %>
 
-<p>Only admin can access this list.</p>
+<p>Only admin can access this file.</p>
 
 <% end %>
 
