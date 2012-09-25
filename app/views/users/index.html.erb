@@ -1,5 +1,7 @@
 <h1>Listing users</h1>
 
+<% if current_user.try(:admin?) %>
+
 <table>
   <tr>
     <th>First name</th>
@@ -27,3 +29,12 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
+
+<% else %>
+
+<p>Only admin can access this list.</p>
+
+<% end %>
+
+
+
