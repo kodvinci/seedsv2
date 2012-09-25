@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :buid %><br />
-    <%= f.number_field :buid %>	<! --changed buid to uid-->
-  </div>
-  <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </div>
@@ -25,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.select :category, ['Agriculture', 'Health', 'Handmade Goods', 'Za Biashara'] %>
+    <%= f.select :category, ['Agriculture', 'Health', 'Handmade Goods', 'Za Biashara', 'Chicago'] %>
   </div>
   <div class="field">
     <%= f.label :description %><br />

@@ -103,7 +103,7 @@ class BorrowersController < ApplicationController
     @borrower = Borrower.find(:all, :conditions => [ "category = ?" , params[:category]])
     @borrower.each{|b|
       b[:current_amount] = 0;
-      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:buid]]);
+      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:borrower_id]]);
         @tran.each{|tr|
           b[:current_amount]=b[:current_amount]+tr[:amount]
         }
@@ -117,10 +117,10 @@ class BorrowersController < ApplicationController
   
   #allow retrieval of borrowers by buid
   def byBuid
-    @borrower = Borrower.find(:all, :conditions => [ "buid = ?" , params[:buid]])
+    @borrower = Borrower.find(:all, :conditions => [ "buid = ?" , params[:borrower_id]])
     @borrower.each{|b|
       b[:current_amount] = 0;
-      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:buid]]);
+      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:borrower_id]]);
         @tran.each{|tr|
           b[:current_amount]=b[:current_amount]+tr[:amount]
         }

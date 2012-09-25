@@ -83,10 +83,10 @@ class TransactionsController < ApplicationController
   
   #allow retrieval of all transactions made by a lender
   def byUid
-    @transaction = Transaction.find(:all, :conditions => [ "luid = ?" , params[:uid]])
+    @transaction = Transaction.find(:all, :conditions => [ "uid = ?" , params[:user_id]])
     @correctMapping = Array.new
     @transaction.each{|transacs| 
-      x = Borrower.find(:first, :conditions =>["buid = ?", transacs[:buid]]);
+      x = Borrower.find(:first, :conditions =>["buid = ?", transacs[:borrower_id]]);
       x[:amount] = transacs[:amount];
       @correctMapping.push(x);
       };
