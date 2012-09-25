@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-    attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :uid, :authentication_token, :lender_attributes
+    attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :authentication_token, :lender_attributes, :credit, :class_type, :exp
     
     def save_lender
         lender do |lend|
