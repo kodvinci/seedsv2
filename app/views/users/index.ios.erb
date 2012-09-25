@@ -1,8 +1,9 @@
 <h1>Listing users</h1>
 
+<% if current_user.try(:admin?) %>
+
 <table>
   <tr>
-    <th>Uid</th>
     <th>First name</th>
     <th>Last name</th>
     <th>Class</th>
@@ -14,7 +15,6 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.uid %></td>
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
     <td><%= user.class_type %></td>
@@ -29,3 +29,12 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
+
+<% else %>
+
+<p>Only admin can access this file.</p>
+
+<% end %>
+
+
+

@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
     # validates_presence_of :first_name, :last_name
     validates_uniqueness_of :email, :case_sensitive => false
     
-    has_one :lender, :autosave => true, :dependent => :destroy  
+    #has_one :lender, :autosave => true, :dependent => :destroy
     
-    accepts_nested_attributes_for :lender, :allow_destroy => true
+    #accepts_nested_attributes_for :lender, :allow_destroy => true
 
 
   # Setup accessible (or protected) attributes for your model

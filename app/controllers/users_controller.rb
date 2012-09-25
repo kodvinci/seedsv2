@@ -2,15 +2,12 @@ class UsersController < ApplicationController
   
     before_filter :authenticate_user!, :only => [:index, :show]
 
-    #if current_user.admin?
   def index
     @users = User.all
   end
-    #end
 
   def show
     @user = User.find(params[:id])
-      #@lender =Lender.find(params[:user_id])
   end
 
   def new
