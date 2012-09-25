@@ -86,4 +86,42 @@ end
       end
   end
   
+ #allow retrieval of all borrowers that a particular lender lent to
+  def getBorrowersByUid
+    @user = User.find(:all, :conditions => [ "uid = ?" , params[:id]])
+    @transaction = Transaction.find(:all, :conditions =>[ "uid = ?" , params[:user_id]])
+    @transaction_buid_set = Set.new;
+    @borrower_list = Array.new
+    @transaction.each{|transacs| 
+      @transaction_buid_set.add(transacs[:borrower_id])
+     };
+     
+    @transaction_buid_set.each{|transacs_buid|
+      borrower = Borrower.find(:first, :conditions =>[ "borrower_id = ?" , transacs_buid]);
+        borrower[:current_amount] = 0;
+        @tran = Transaction.find(:all, :conditions => ["borrower_id = ?" , borrower[:borrower_id]]);
+        if(@tran != nil)
+          @tran.each{|tr|
+            borrower[:current_amount]=borrower[:current_amount]+tr[:amount]
+          }
+        end
+        @borrower_list.push(borrower);
+      };  
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @borrower_list }
+    end
+  end
+  
+ #allow retrieval of the lender information by its luid
+  def byUid
+    @user = User.find(:all, :conditions => [ "uid = ?" , params[:id]])
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user }
+    end
+  end
+  
 end
