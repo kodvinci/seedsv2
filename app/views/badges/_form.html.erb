@@ -1,3 +1,4 @@
+<% if current_user.try(:admin?) %>
 <%= form_for(@badge) do |f| %>
   <% if @badge.errors.any? %>
     <div id="error_explanation">
@@ -26,4 +27,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
 <% end %>
