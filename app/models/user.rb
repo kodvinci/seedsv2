@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    after_create :save_lender
+    # after_create :save_lender
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -16,12 +16,12 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-    attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :authentication_token, :lender_attributes, :credit, :class_type, :exp
+    attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :authentication_token, :credit, :class_type, :exp
     
-    def save_lender
-        lender do |lend|
-            lend.save(false)
-        end
-    end
+    #   def save_lender
+    #        lender do |lend|
+    #           lend.save(false)
+    #       end
+    #   end
     
 end
