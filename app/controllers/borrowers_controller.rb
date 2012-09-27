@@ -5,7 +5,7 @@ class BorrowersController < ApplicationController
     @borrowers = Borrower.all
     @borrowers.each{|b|
       b[:current_amount] = 0;
-      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:buid]]);
+      @tran = Transaction.find(:all, :conditions => ["borrower_id = ?" , b[:id]]);
         @tran.each{|tr|
           b[:current_amount]=b[:current_amount]+tr[:amount]
         }
@@ -22,7 +22,7 @@ class BorrowersController < ApplicationController
     @borrower = Borrower.find(params[:id])
 
     @borrower[:current_amount] = 0;
-     @tran = Transaction.find(:all, :conditions => ["buid = ?" , @borrower[:buid]]);
+     @tran = Transaction.find(:all, :conditions => ["borrower_id = ?" , @borrower[:id]]);
       @tran.each{|tr|
         @borrower[:current_amount]=@borrower[:current_amount]+tr[:amount]
      }
@@ -48,7 +48,7 @@ class BorrowersController < ApplicationController
   def edit
     @borrower = Borrower.find(params[:id])
      @borrower[:current_amount] = 0;
-     @tran = Transaction.find(:all, :conditions => ["buid = ?" , @borrower[:buid]]);
+     @tran = Transaction.find(:all, :conditions => ["borrower_id = ?" , @borrower[:id]]);
       @tran.each{|tr|
         @borrower[:current_amount]=@borrower[:current_amount]+tr[:amount]
      }
@@ -103,7 +103,7 @@ class BorrowersController < ApplicationController
     @borrower = Borrower.find(:all, :conditions => [ "category = ?" , params[:category]])
     @borrower.each{|b|
       b[:current_amount] = 0;
-      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:borrower_id]]);
+      @tran = Transaction.find(:all, :conditions => ["borrower_id = ?" , b[:borrower_id]]);
         @tran.each{|tr|
           b[:current_amount]=b[:current_amount]+tr[:amount]
         }
@@ -117,10 +117,10 @@ class BorrowersController < ApplicationController
   
   #allow retrieval of borrowers by buid
   def byBuid
-    @borrower = Borrower.find(:all, :conditions => [ "buid = ?" , params[:borrower_id]])
+    @borrower = Borrower.find(:all, :conditions => [ "borrower_id = ?" , params[:borrower_id]])
     @borrower.each{|b|
       b[:current_amount] = 0;
-      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:borrower_id]]);
+      @tran = Transaction.find(:all, :conditions => ["borrower_id = ?" , b[:borrower_id]]);
         @tran.each{|tr|
           b[:current_amount]=b[:current_amount]+tr[:amount]
         }
