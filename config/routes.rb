@@ -21,6 +21,8 @@ MicroLending::Application.routes.draw do
   resources :users, :has_one => :lender
    
   root :to => "home#index"
+    match "/testing", :controller => "home", :action => "testing";
+
   resources :home 
  
   match "/event_logs/getEventsById", :controller => "event_logs", :action => "getEventsById";
